@@ -13,7 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 let g:ycm_key_list_select_completion = []
 
 " Install YCM
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " Install VIM airline
@@ -25,25 +25,23 @@ let g:airline_theme='powerlineish'
 Plugin 'xuhdev/vim-latex-live-preview' 
 
 " Install bracketpairthing..
-"Plugin 'jiangmiao/auto-pairs'
+Plugin 'jiangmiao/auto-pairs'
 
 " Install vim-addon-mw-utils snipmate helper
-"Bundle 'MarcWeber/vim-addon-mw-utils'
-
+Plugin 'MarcWeber/vim-addon-mw-utils'
 " Install tilb_vim snipmate helper
-"Bundle 'tomtom/tlib_vim'
-
+Plugin 'tomtom/tlib_vim'
 " Snippets for snipmate
-"Bundle 'honza/vim-snippets'
-
+Plugin 'honza/vim-snippets'
 " Install snipmate
-"Bundle 'garbas/vim-snipmate'
-
+Plugin 'garbas/vim-snipmate'
+"Installing Ultisnips(Instead of Snipmate)
+"Plugin 'SirVer/ultisnips'
 " Install syntastic
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Install surround
-Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-surround'
 
 " Install unimpaired
 Plugin 'tpope/vim-unimpaired'
@@ -59,7 +57,8 @@ Plugin 'scrooloose/nerdtree'
 
 call vundle#end()	" required
 
-
+"Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
 
 "Let latex documents be latex documents..Dont change them to plaintext!
 let g:tex_flavor='latex'
