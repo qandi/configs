@@ -13,9 +13,10 @@ Plugin 'gmarik/Vundle.vim'
 let g:ycm_key_list_select_completion = []
 
 " Install YCM
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 " Install VIM airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -25,26 +26,38 @@ let g:airline_theme='powerlineish'
 Plugin 'xuhdev/vim-latex-live-preview' 
 
 " Install bracketpairthing..
-Plugin 'jiangmiao/auto-pairs'
+"Plugin 'jiangmiao/auto-pairs'
+
+"Autopairs fucked up my bindings, so
+"here goes autoclose;
+Plugin 'Townk/vim-autoclose'
 
 " Install vim-addon-mw-utils snipmate helper
-Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+
 " Install tilb_vim snipmate helper
-Plugin 'tomtom/tlib_vim'
+"Plugin 'tomtom/tlib_vim'
+
 " Snippets for snipmate
 Plugin 'honza/vim-snippets'
+
 " Install snipmate
-Plugin 'garbas/vim-snipmate'
+"Plugin 'garbas/vim-snipmate'
+
 "Installing Ultisnips(Instead of Snipmate)
-"Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
 " Install syntastic
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 
 " Install surround
 "Plugin 'tpope/vim-surround'
 
 " Install unimpaired
-Plugin 'tpope/vim-unimpaired'
+"Plugin 'tpope/vim-unimpaired'
 
 " Install fugitive
 Plugin 'tpope/vim-fugitive'
@@ -76,7 +89,6 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 " Edit the vimrc file with mapleader and v
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 
-"nnoremap å <<Ctrl-V>229>
 
 " Split screen vertical and open a new file
 nnoremap <leader>s :vne<cr>:e
@@ -141,6 +153,7 @@ vmap <C-Down> ]egv
 " makes H go to beginning of line
 nnoremap H 0
 nnoremap L $
+
 
 " Map jk in insertmode to esc
 inoremap jk <esc> 
@@ -211,6 +224,7 @@ colorscheme badwolf
 
 "Line numbers"
 "------------------------------"
+:set relativenumber
 :set number
 "------------------------------"
 "------------------------------"
@@ -230,9 +244,18 @@ colorscheme badwolf
 "Add YCM FixIt to shortcut
 map <F9> :YcmCompleter FixIt<CR>
 
+"Updatetime for Latex livepreview
 set updatetime=1000
 
+"Mark Line 80 to act as a guide for code width
 set cc=80
 
+"Shortcuts for bubbling lines up and down
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv''
 
 "numero uno
