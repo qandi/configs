@@ -9,14 +9,17 @@ call vundle#begin('~/.vim/bundle')
 
 " let vundle manage vundle, required
 Plugin 'gmarik/Vundle.vim'
-" Unbind tap from autocomplete
-let g:ycm_key_list_select_completion = []
+
 
 " Install YCM
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
+"Tab velger hvilken snippet
+"let g:ycm_key_list_select_completion = "<tab>"
+
 " Install VIM airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -39,7 +42,7 @@ Plugin 'Townk/vim-autoclose'
 "Plugin 'tomtom/tlib_vim'
 
 " Snippets for snipmate
-Plugin 'honza/vim-snippets'
+Bundle 'honza/vim-snippets'
 
 " Install snipmate
 "Plugin 'garbas/vim-snipmate'
@@ -153,7 +156,6 @@ vmap <C-Down> ]egv
 " makes H go to beginning of line
 nnoremap H 0
 nnoremap L $
-
 
 " Map jk in insertmode to esc
 inoremap jk <esc> 
