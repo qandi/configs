@@ -12,13 +12,13 @@ Plugin 'gmarik/Vundle.vim'
 
 
 " Install YCM
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+"Plugin 'Valloric/YouCompleteMe'
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 "Tab velger hvilken snippet
-"let g:ycm_key_list_select_completion = "<tab>"
+"let g:ycm_key_list_select_completion = '<tab>'
 
 " Install VIM airline
 Plugin 'vim-airline/vim-airline'
@@ -27,6 +27,7 @@ let g:airline_theme='powerlineish'
 
 " Install latexlivepreview
 Plugin 'xuhdev/vim-latex-live-preview' 
+let g:livepreview_previewer = 'qpdfview'
 
 " Install bracketpairthing..
 "Plugin 'jiangmiao/auto-pairs'
@@ -60,7 +61,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "Plugin 'tpope/vim-surround'
 
 " Install unimpaired
-"Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-unimpaired'
 
 " Install fugitive
 Plugin 'tpope/vim-fugitive'
@@ -70,6 +71,11 @@ Plugin 'scrooloose/nerdcommenter'
 
 " Install nerdtree
 Plugin 'scrooloose/nerdtree'
+
+"Install Autosave
+Plugin 'vim-scripts/vim-auto-save'
+let g:auto_save = 1 
+
 
 call vundle#end()	" required
 
@@ -139,7 +145,7 @@ filetype plugin indent on
 filetype plugin on
 
 " Enables indentation folding
-:set foldmethod=manual
+set foldmethod=manual
 
 " Map space to folding
 nnoremap <space> za
@@ -260,4 +266,6 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv''
 
+set fileencoding=utf-8
+set encoding=utf-8
 "numero uno
